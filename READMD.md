@@ -1,3 +1,0 @@
-# Cardioid
-
-Cardoid visualizer

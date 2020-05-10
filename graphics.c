@@ -7,13 +7,13 @@
 #ifdef CARDIOID_RELEASE
 # define SDL_CALL(x) x
 #else
-# define SDL_CALL(x)                                  \
-	SDL_ClearError();                                 \
-	x;                                                \
+# define SDL_CALL(x)                                 \
+	SDL_ClearError();                                \
+	x;                                               \
 	if (*SDL_GetError() != '\0') {                   \
-		SDL_Log("[ERROR SDL] %s at %s:%d\n\t"#x,      \
+		SDL_Log("[ERROR SDL] %s at %s:%d\n\t"#x,     \
 				SDL_GetError(), __FILE__, __LINE__); \
-		exit(EXIT_FAILURE);                           \
+		exit(EXIT_FAILURE);                          \
 }
 #endif
 
@@ -141,6 +141,7 @@ static void		event_handler(t_state *state)
 				break;
 
 			case SDL_WINDOWEVENT:
+				/* printf("%d\n", e.window.windowID); */
 				if (e.window.event == SDL_WINDOWEVENT_RESIZED)
 					update_window_value(state, e.window.data1, e.window.data2);
 		}

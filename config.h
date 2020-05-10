@@ -3,7 +3,7 @@
 
 // # define LINE_COLOR 0x151515ff
 // # define LINE_COLOR 0xb71c1cff
-# define LINE_COLOR 0x280000ff
+# define LINE_COLOR 0x280808ff
 
 # define POINTS_STEP 1.0
 # define FACTOR_STEP 0.01
